@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vectoresdenumerosenteros.js</title>
+</head>
+<body>
+    <script>
+          function ingresarVector(nombre) {
+    let vector = [];
+    while (vector.length < 5) {
+        let num = parseInt(prompt(`Ingrese el número ${vector.length + 1} para el ${nombre} (número ${vector.length > 0 ? 'mayor que ' + vector[vector.length - 1] : 'cualquier número'}):`), 10);
+        
+        if (isNaN(num)) {
+            alert("Por favor, ingrese un número válido.");
+            continue;
+        }
+
+        if (vector.length > 0 && num <= vector[vector.length - 1]) {
+            alert(`Error: El número debe ser mayor que ${vector[vector.length - 1]}. Intente nuevamente.`);
+        } else {
+            vector.push(num);
+        }
+    }
+    return vector;
+}
+
+function mezclarVectores(vect1, vect2) {
+    let resultado = [];
+    let i = 0, j = 0;
+
+    while (i < vect1.length && j < vect2.length) {
+        if (vect1[i] < vect2[j]) {
+            resultado.push(vect1[i]);
+            i++;
+        } else {
+            resultado.push(vect2[j]);
+            j++;
+        }
+    }
+
+    // Agregar elementos restantes
+    while (i < vect1.length) {
+        resultado.push(vect1[i]);
+        i++;
+    }
+
+    while (j < vect2.length) {
+        resultado.push(vect2[j]);
+        j++;
+    }
+
+    return resultado;
+}
+
+function ejecutar() {
+    const vector1 = ingresarVector("Vector 1");
+    const vector2 = ingresarVector("Vector 2");
+
+    const vectorMezclado = mezclarVectores(vector1, vector2);
+
+    console.log("Resultado de la mezcla:");
+    console.log(vectorMezclado.join(', '));
+}
+
+ejecutar();
+    </script>
+</head>
+<body>
+    <h1>Mezcla de Vectores</h1>
+    <button onclick="mostrarResultado()">Ingresar Vectores</button>
+    <div id="resultados"></div>
+    </script>
+</body>
+</html>

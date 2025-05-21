@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areasyperimetros.js</title>
+</head>
+<body>
+    <h3>Cálculo de áreas y perimetros de algunas figuras</h3>
+    
+<Script>
+    
+    let figura = prompt ("ingrese un numero Cuadrado=1 Circulo=2 Rectangulo=3 Triangulo=4 Salir=0 ");
+
+    let base;
+    let altura;
+    let area; 
+    let perimetroA;
+    let perimetroB;
+    let perimetroC;
+    let perimetroD;
+    let perimetrototal;
+    let ladoa;
+    let ladob;
+    let ladoc;
+
+    var radio;
+    const pi = 3.1516
+
+    //Cuadrado 
+    switch (figura){
+        case "1":
+        altura = parseInt (prompt("ingresar la altura del cuadrado en cm: "));
+        perimetroA = (4 * altura);
+        area = (Math.pow(altura,2));
+
+        console.log ("El perimetro del cuadrado es: " + perimetroA + "cm");
+        console.log ("El área del cuadrado es: " + area + "cm");
+
+        break;
+
+        //Circulo
+
+        case "2":
+        radio = parseInt (prompt("Ingresar el radio del circulo en cm: "));
+        perimetroA = (2*pi * (radio));
+        area = (pi * Math.pow(radio,2));
+
+        console.log ("El perimetro del circulo es: " + perimetroA + " cm");
+        console.log ("El área del circulo es: " + area + " cm");
+
+        break;
+
+        //Rectangulo
+
+        case "3":
+        base = parseInt (prompt("Ingresar la base del rectangulo en cm: "));
+        altura = parseInt (prompt("Ingrese la altura del rectangulo en cm: "));
+        area = base * altura 
+
+        perimetrototal = (2 * (base+altura));
+
+        console.log ("El perimetro del rectangulo es: " + perimetrototal + "cm");
+        console.log ("El área del rectangulo es: " + area + "cm");
+
+        break;
+
+        //Triangulo
+
+        case "4":
+        base = parseInt (prompt("Ingresar la base del triangulo en cm: "));
+        altura = parseInt (prompt("Ingrese la altura del triangulo en cm: "));
+        area = ((base * altura)/2);
+
+        ladoa = parseInt (prompt("Ingresar el ladoa en cm: "));
+        ladob = parseInt (prompt("Ingresar el ladob en cm: "));
+        ladoc = parseInt (prompt("Ingresar el ladoc en cm: "));
+        perimetrototal = (ladoa+ladob+ladoc);
+
+        console.log ("El perimetro del triangulo es: " + perimetrototal + "cm");
+        console.log ("El área del triangulo es: " + area + "cm");
+
+        break;
+
+        case "0":
+        default:
+        console.log ("Intentar de nuevo: ");
+    }
+
+</Script>
+</body>
+</html>
